@@ -1,0 +1,11 @@
+fruit_counts = {}
+while True:
+    fruit = input("Enter your favorite fruit: ").strip().lower()
+    if fruit == 'stop':
+        break
+    if fruit in fruit_counts:
+        fruit_counts[fruit] += 1
+    else:
+        fruit_counts[fruit] = 1
+print("\nresults:")
+print(fruit_counts)
