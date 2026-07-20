@@ -1,3 +1,6 @@
+#ჯერ უნდა გვქონდეს დაინსტალირებული requests მოდული
+# ტერმინალში pip install requests
+
 import requests
 
 def get_weather():
