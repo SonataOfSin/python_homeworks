@@ -3,9 +3,9 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_unstructured import UnstructuredLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -23,7 +23,7 @@ EXAMPLE_QUESTIONS = [
 
 
 def load_chunks(markdown_path: Path) -> list[Document]:
-    documents = UnstructuredMarkdownLoader(str(markdown_path)).load()
+    documents = UnstructuredLoader(file_path=str(markdown_path)).load()
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
         chunk_overlap=100,
@@ -54,6 +54,23 @@ def print_similar_chunks(
         print(chunks[index].page_content)
 
 
+def get_api_key() -> str:
+    env_files = (
+        Path(__file__).with_name(".env"),
+        Path(__file__).parent.parent / "homework_54" / ".env",
+    )
+    for env_file in env_files:
+        load_dotenv(env_file)
+        api_key = os.getenv("GEMINI_API_KEY")
+        if api_key:
+            return api_key
+
+    raise RuntimeError(
+        "GEMINI_API_KEY is not set. Add it to homework_55/.env "
+        "or homework_54/.env."
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Find the most relevant hotel information for a question."
@@ -65,10 +82,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    load_dotenv(Path(__file__).with_name(".env"))
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("GEMINI_API_KEY is not set. Add it to homework_55/.env.")
+    api_key = get_api_key()
 
     markdown_path = Path(__file__).with_name("hotel_info.md")
     chunks = load_chunks(markdown_path)
