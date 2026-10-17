@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>My Todo List</h1>
+  <p class="info">ნაპოვნია: <span id="resultCount">0</span> todo</p>
+
+  <div class="filters">
+    <label for="searchInput">ძებნა სათაურით:</label>
+    <input type="text" id="searchInput" placeholder="დაწერე title...">
+
+    <label for="userSelect">userId:</label>
+    <select id="userSelect">
+      <option value="">ყველა</option>
+    </select>
+
+    <label for="statusSelect">completed:</label>
+    <select id="statusSelect">
+      <option value="">ყველა</option>
+      <option value="true">true (დასრულებული)</option>
+      <option value="false">false (არადასრულებული)</option>
+    </select>
+
+    <button id="resetBtn" type="button">გასუფთავება</button>
+  </div>
+
+  <div id="board">
+    <p class="loading">იტვირთება...</p>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

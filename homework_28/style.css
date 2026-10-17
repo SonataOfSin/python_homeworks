@@ -1,0 +1,177 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* filters */
+
+.filters {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #cccccc;
+}
+
+.filters label {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.filters button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #c0392b;
+}
+
+/* todo list */
+
+ul#todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#todoList li {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  margin-bottom: 6px;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+ul#todoList li:hover {
+  background-color: #eeeeee;
+}
+
+.todo-id {
+  color: #888888;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.todo-user {
+  background-color: #3498db;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.todo-title {
+  font-size: 14px;
+}
+
+.done {
+  color: green;
+  font-weight: bold;
+  font-size: 12px;
+  float: right;
+}
+
+.not-done {
+  color: orange;
+  font-weight: bold;
+  font-size: 12px;
+  float: right;
+}
+
+/* pagination */
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: 1px solid #999999;
+  background-color: white;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #dddddd;
+}
+
+.pagination button.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+/* detail page */
+
+.back {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.detail-box {
+  border: 1px solid #cccccc;
+  padding: 15px;
+  background-color: #fafafa;
+}
+
+.detail-box p {
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.detail-box b {
+  display: inline-block;
+  width: 100px;
+}
+
+.loading, .error, .empty {
+  text-align: center;
+  color: #777777;
+  margin-top: 30px;
+}
+
+.error {
+  color: red;
+}
