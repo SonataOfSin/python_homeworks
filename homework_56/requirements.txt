@@ -1,0 +1,8 @@
+langchain-google-genai
+langchain-text-splitters
+langchain-unstructured
+pgvector
+psycopg[binary]
+python-dotenv
+SQLAlchemy
+unstructured[md]
