@@ -1,0 +1,7 @@
+fastapi
+httpx
+langchain-google-genai
+langgraph
+python-dotenv
+streamlit
+uvicorn[standard]
